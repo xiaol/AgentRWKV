@@ -363,7 +363,7 @@ export const ChatWindowTitle = ({ model }: { model: GPTModelNames }) => {
 
   return (
     <>
-      Agent<span className="text-neutral-400">GPT-3.5</span>
+      Agent<span className="text-neutral-400">RWKV-world-7B</span>
     </>
   );
 };

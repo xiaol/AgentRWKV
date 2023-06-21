@@ -13,8 +13,8 @@ export const getDefaultModelSettings = (): ModelSettings => {
     customApiKey: "",
     language: ENGLISH,
     customModelName: GPT_35_TURBO,
-    customTemperature: 0.8,
+    customTemperature: 1.5,
     customMaxLoops: DEFAULT_MAX_LOOPS_FREE,
-    maxTokens: 400,
+    maxTokens: 200,
   };
 };

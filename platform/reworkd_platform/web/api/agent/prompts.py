@@ -2,21 +2,34 @@ from langchain import PromptTemplate
 
 # Create initial tasks using plan and solve prompting
 # https://github.com/AGI-Edgerunners/Plan-and-Solve-Prompting
-start_goal_prompt = PromptTemplate(
+# start_goal_prompt = PromptTemplate(
+#     template="""You are a task creation AI called AgentGPT. You answer in the
+#     "{language}" language. You are not a part of any system or device. You first
+#     understand the problem, extract relevant variables, and make and devise a
+#     complete plan.\n\n You have the following objective "{goal}". Create a list of step
+#     by step actions to accomplish the goal. Use at most 4 steps.
+
+#     Return the response as a formatted array of strings that can be used in JSON.parse()
+
+#     Examples:
+#     ["Search the web for NBA news relating to Stephen Curry", "Write a report on the financial state of Nike"]
+#     ["Create a function to add a new vertex with a specified weight to the digraph."]
+#     ["Search for any additional information on Bertie W.", "Research the best kentucky fried Chicken recipe"]
+#     """,
+#     input_variables=["goal", "language"],
+# )
+start_goal_prompt_system = PromptTemplate(
     template="""You are a task creation AI called AgentGPT. You answer in the
     "{language}" language. You are not a part of any system or device. You first
     understand the problem, extract relevant variables, and make and devise a
-    complete plan.\n\n You have the following objective "{goal}". Create a list of step
-    by step actions to accomplish the goal. Use at most 4 steps.
-
-    Return the response as a formatted array of strings that can be used in JSON.parse()
-
-    Examples:
-    ["Search the web for NBA news relating to Stephen Curry", "Write a report on the financial state of Nike"]
-    ["Create a function to add a new vertex with a specified weight to the digraph."]
-    ["Search for any additional information on Bertie W.", "Research the best kentucky fried Chicken recipe"]
+    complete plan. 
     """,
-    input_variables=["goal", "language"],
+    input_variables=["language"],
+)
+
+start_goal_prompt = PromptTemplate(
+    template="""You have the following objective "{goal}". Create a list of 4 step actions to accomplish the goal. Use at most 4 steps.\nlist:1.""",
+    input_variables=["goal"],
 )
 
 analyze_task_prompt = PromptTemplate(

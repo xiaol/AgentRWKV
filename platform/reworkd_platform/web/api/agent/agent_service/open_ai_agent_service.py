@@ -3,7 +3,7 @@ from typing import List, Optional
 from lanarky.responses import StreamingResponse  # type: ignore
 from langchain.chat_models.base import BaseChatModel
 from langchain.output_parsers import PydanticOutputParser
-from langchain.prompts import ChatPromptTemplate, SystemMessagePromptTemplate
+from langchain.prompts import ChatPromptTemplate, SystemMessagePromptTemplate,HumanMessagePromptTemplate
 from loguru import logger
 from pydantic import ValidationError
 
@@ -18,6 +18,7 @@ from reworkd_platform.web.api.agent.prompts import (
     analyze_task_prompt,
     create_tasks_prompt,
     start_goal_prompt,
+    start_goal_prompt_system,
 )
 from reworkd_platform.web.api.agent.task_output_parser import TaskOutputParser
 from reworkd_platform.web.api.agent.tools.open_ai_function import get_tool_function
@@ -46,7 +47,7 @@ class OpenAIAgentService(AgentService):
         completion = await call_model_with_handling(
             self.model,
             ChatPromptTemplate.from_messages(
-                [SystemMessagePromptTemplate(prompt=start_goal_prompt)]
+                [SystemMessagePromptTemplate(prompt=start_goal_prompt_system), HumanMessagePromptTemplate(prompt=start_goal_prompt)]
             ),
             {"goal": goal, "language": self.language},
         )
@@ -112,7 +113,7 @@ class OpenAIAgentService(AgentService):
         completion = await call_model_with_handling(
             self.model,
             ChatPromptTemplate.from_messages(
-                [SystemMessagePromptTemplate(prompt=create_tasks_prompt)]
+                [HumanMessagePromptTemplate(prompt=create_tasks_prompt)]
             ),
             {
                 "goal": goal,
