@@ -36,7 +36,7 @@ async def get_open_ai_image(input_str: str) -> str:
     api_key = rotate_keys(
         gpt_3_key=settings.openai_api_key,
         gpt_4_key=settings.secondary_openai_api_key,
-        model="gpt-3.5-turbo",
+        model="RWKV-world-7B",
     )
 
     response = openai.Image.create(

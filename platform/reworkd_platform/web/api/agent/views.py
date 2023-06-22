@@ -40,7 +40,7 @@ async def start_tasks(
             example={
                 "goal": "Create business plan for a bagel company",
                 "modelSettings": {
-                    "customModelName": "gpt-3.5-turbo",
+                    "customModelName": "RWKV-world-7B",
                 },
             },
         )

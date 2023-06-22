@@ -26,7 +26,7 @@ def test_rotate_keys(model: LLM_Model) -> None:
 @pytest.mark.parametrize(
     "model",
     [
-        "gpt-3.5-turbo",
+        "RWKV-world-7B",
     ],
 )
 def test_rotate_keys_gpt_3_5(model: LLM_Model) -> None:
@@ -59,6 +59,6 @@ def test_rotate_keys_gpt_4(model: LLM_Model) -> None:
     assert 0.65 < counter[SK] / ITERATIONS < 0.75
 
 
-@pytest.mark.parametrize("model", ["gpt-3.5-turbo", "gpt-4"])
+@pytest.mark.parametrize("model", ["RWKV-world-7B", "gpt-4"])
 def test_rotate_keys_no_secondary(model: LLM_Model) -> None:
     assert rotate_keys(PK, None, model=model) == PK

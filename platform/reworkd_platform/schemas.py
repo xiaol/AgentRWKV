@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, validator
 from reworkd_platform.web.api.agent.analysis import Analysis
 
 LLM_Model = Literal[
-    "gpt-3.5-turbo",
+    "RWKV-world-7B",
     "gpt-3.5-turbo-16k",
     "gpt-4",
 ]
@@ -19,16 +19,16 @@ Loop_Step = Literal[
 ]
 
 LLM_MODEL_MAX_TOKENS: Dict[LLM_Model, int] = {
-    "gpt-3.5-turbo": 4000,
+    "RWKV-world-7B": 4000,
     "gpt-3.5-turbo-16k": 16000,
     "gpt-4": 8000,
 }
 
 
 class ModelSettings(BaseModel):
-    model: LLM_Model = Field(default="gpt-3.5-turbo")
+    model: LLM_Model = Field(default="RWKV-world-7B")
     custom_api_key: str = Field(default="")
-    temperature: float = Field(default=0.9, ge=0.0, le=1.0)
+    temperature: float = Field(default=1.5, ge=0.0, le=2.0)
     max_tokens: int = Field(default=500, ge=0)
     language: str = Field(default="English")
 

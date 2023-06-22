@@ -6,16 +6,16 @@ const AppHead = () => {
 
   return (
     <Head>
-      <title>AgentGPT</title>
+      <title>AgentRWKV</title>
       <meta name="description" content={description} />
-      <meta name="twitter:site" content="@AgentGPT" />
+      <meta name="twitter:site" content="@AgentRWKV" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="AgentGPT 🤖" />
+      <meta name="twitter:title" content="AgentRWKV 🤖" />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content="https://agentgpt.reworkd.ai/banner.png" />
       <meta name="twitter:image:width" content="1280" />
       <meta name="twitter:image:height" content="640" />
-      <meta property="og:title" content="AgentGPT: Autonomous AI in your browser 🤖" />
+      <meta property="og:title" content="AgentRWKV: Autonomous AI in your browser 🤖" />
       <meta property="og:description" content={description} />
       <meta property="og:url" content="https://agentgpt.reworkd.ai/" />
       <meta property="og:image" content="https://agentgpt.reworkd.ai/banner.png" />

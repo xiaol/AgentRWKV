@@ -13,7 +13,7 @@ from reworkd_platform.schemas import ModelSettings
             "language": "french",
         },
         {
-            "model": "gpt-3.5-turbo",
+            "model": "RWKV-world-7B",
             "max_tokens": 3000,
         },
         {
@@ -24,7 +24,7 @@ from reworkd_platform.schemas import ModelSettings
 )
 def test_model_settings_valid(settings):
     result = ModelSettings(**settings)
-    assert result.model == settings.get("model", "gpt-3.5-turbo")
+    assert result.model == settings.get("model", "RWKV-world-7B")
     assert result.max_tokens == settings.get("max_tokens", 500)
     assert result.temperature == settings.get("temperature", 0.9)
     assert result.language == settings.get("language", "English")
@@ -55,7 +55,7 @@ def test_model_settings_invalid(settings):
 
 def test_model_settings_default():
     settings = ModelSettings(**{})
-    assert settings.model == "gpt-3.5-turbo"
+    assert settings.model == "RWKV-world-7B"
     assert settings.temperature == 0.9
     assert settings.max_tokens == 500
     assert settings.language == "English"

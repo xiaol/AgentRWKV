@@ -9,7 +9,7 @@ WEIGHTS = [PRIMARY_KEY_RATE, SECONDARY_KEY_RATE]
 
 
 def rotate_keys(gpt_3_key: str, gpt_4_key: Optional[str], model: LLM_Model) -> str:
-    if not gpt_4_key or model == "gpt-3.5-turbo":
+    if not gpt_4_key or model == "RWKV-world-7B":
         return gpt_3_key
 
     keys = [gpt_3_key, gpt_4_key]

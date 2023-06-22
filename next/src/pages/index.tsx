@@ -279,7 +279,7 @@ const Home: NextPage = () => {
                       disabled={agent != null}
                       onChange={(e) => setNameInput(e.target.value)}
                       onKeyDown={(e) => handleKeyPress(e)}
-                      placeholder="AgentGPT"
+                      placeholder="AgentRWKV"
                       type="text"
                     />
                     <Button

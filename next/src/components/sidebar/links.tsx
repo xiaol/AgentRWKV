@@ -34,17 +34,17 @@ export const PAGE_LINKS = [
 export const SOCIAL_LINKS = [
   {
     name: "Github",
-    href: "https://github.com/reworkd/AgentGPT",
+    href: "https://github.com/xiaol/AgentRWKV",
     icon: <FaGithub className="group-hover:text-violet-600" />,
   },
   {
     name: "Twitter",
-    href: "https://twitter.com/ReworkdAI",
+    href: "https://twitter.com/BlinkDL_AI?s=20",
     icon: <FaTwitter className="group-hover:text-sky-500" />,
   },
   {
     name: "Discord",
-    href: "https://discord.gg/gcmNyAAFfV",
+    href: "https://discord.com/invite/bDSBUMeFpc",
     icon: <FaDiscord className="group-hover:text-blue-400" />,
   },
 ];

@@ -19,7 +19,7 @@ from langchain import PromptTemplate
 #     input_variables=["goal", "language"],
 # )
 start_goal_prompt_system = PromptTemplate(
-    template="""You are a task creation AI called AgentGPT. You answer in the
+    template="""You are a task creation AI called AgentRWKV. You answer in the
     "{language}" language. You are not a part of any system or device. You first
     understand the problem, extract relevant variables, and make and devise a
     complete plan. 
@@ -77,6 +77,26 @@ execute_task_prompt = PromptTemplate(
     input_variables=["goal", "language", "task"],
 )
 
+# create_tasks_prompt = PromptTemplate(
+#     template="""You are an AI task creation agent. You must answer in the "{language}"
+#     language. You have the following objective `{goal}`. You have the
+#     following incomplete tasks `{tasks}` and have just executed the following task
+#     `{lastTask}` and received the following result `{result}`.
+
+#     Based on this, create a single new task to be completed by your AI system
+#     such that your goal is more closely reached or completely reached.
+#     Make the task as specific as possible and ensure it is a single task. 
+#     If there are no more tasks to be done, return nothing. Do not add quotes to the task.
+
+#     Examples:
+#     "Search the web for NBA news"
+#     "Create a function to add a new vertex with a specified weight to the digraph."
+#     "Search for any additional information on Bertie W."
+#     ""
+#     """,
+#     input_variables=["goal", "language", "tasks", "lastTask", "result"],
+# )
+
 create_tasks_prompt = PromptTemplate(
     template="""You are an AI task creation agent. You must answer in the "{language}"
     language. You have the following objective `{goal}`. You have the
@@ -87,15 +107,26 @@ create_tasks_prompt = PromptTemplate(
     such that your goal is more closely reached or completely reached.
     Make the task as specific as possible and ensure it is a single task. 
     If there are no more tasks to be done, return nothing. Do not add quotes to the task.
-
-    Examples:
-    "Search the web for NBA news"
-    "Create a function to add a new vertex with a specified weight to the digraph."
-    "Search for any additional information on Bertie W."
-    ""
     """,
     input_variables=["goal", "language", "tasks", "lastTask", "result"],
 )
+
+# summarize_prompt = PromptTemplate(
+#     template="""You must answer in the "{language}" language. 
+    
+#     Parse and summarize the following text snippets "{snippets}".
+#     Write using clear markdown formatting in a style expected of the goal "{goal}".
+#     Be as clear, informative, and descriptive as necessary and attempt to
+#     answer the query: "{query}" as best as possible.
+    
+#     Cite sources for as many sentences as possible via the source link. Use the index as the citation text.
+#     Site the source using a markdown link directly at the end of the sentence that the source is used in. 
+#     Do not list sources at the end of the writing. 
+    
+#     Example: "So this is a cited sentence at the end of a paragraph[1](https://test.com). This is another sentence." 
+#     """,
+#     input_variables=["goal", "language", "query", "snippets"],
+# )
 
 summarize_prompt = PromptTemplate(
     template="""You must answer in the "{language}" language. 
@@ -108,8 +139,7 @@ summarize_prompt = PromptTemplate(
     Cite sources for as many sentences as possible via the source link. Use the index as the citation text.
     Site the source using a markdown link directly at the end of the sentence that the source is used in. 
     Do not list sources at the end of the writing. 
-    
-    Example: "So this is a cited sentence at the end of a paragraph[1](https://test.com). This is another sentence." 
     """,
     input_variables=["goal", "language", "query", "snippets"],
 )
+
