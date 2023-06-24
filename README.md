@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/reworkd/AgentGPT/main/next/public/banner.png" height="300" alt="AgentGPT Logo"/>
+  <img src="https://github.com/xiaol/AgentRWKV/blob/main/next/public/banner.png" height="300" alt="AgentGPT Logo"/>
 </p>
 <p align="center">
   <em>🤖 Assemble, configure, and deploy autonomous AI Agent(s) in your browser. 🤖 </em>
@@ -30,7 +30,7 @@ It will attempt to reach the goal by thinking of tasks to do, executing them, an
 ---
 
 ## ✨ Demo
-For the best demo experience, try [our site](https://agentgpt.reworkd.ai) directly :)
+For the best demo experience, try [our site](https://agentrwkv.ai-creator.net) directly :)
 
 [Demo Video](https://github.com/reworkd/AgentGPT/assets/50181239/5348e44a-29a5-4280-a06b-fe1429a8d99e)
 
