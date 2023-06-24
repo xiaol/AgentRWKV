@@ -40,7 +40,7 @@ class Settings(BaseSettings):
     # Current environment
     environment: str = "development"
 
-    log_level: LogLevel = LogLevel.INFO
+    log_level: LogLevel = LogLevel.DEBUG
 
     # OpenAI
     openai_api_base: str = "https://api.openai.com/v1"
@@ -48,7 +48,7 @@ class Settings(BaseSettings):
     secondary_openai_api_key: Optional[str] = None
 
     replicate_api_key: Optional[str] = None
-    serp_api_key: Optional[str] = None
+    serp_api_key: Optional[str] = "b4e1f9b32d10f82cd0f301c0d1c0d686713fd6ab"
 
     # Frontend URL for CORS
     frontend_url: str = "http://localhost:3000"

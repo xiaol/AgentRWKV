@@ -12,13 +12,13 @@ const AppHead = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="AgentRWKV 🤖" />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content="https://agentgpt.reworkd.ai/banner.png" />
+      <meta name="twitter:image" content="https://agentrwkv.ai-creator.net/banner.png" />
       <meta name="twitter:image:width" content="1280" />
       <meta name="twitter:image:height" content="640" />
       <meta property="og:title" content="AgentRWKV: Autonomous AI in your browser 🤖" />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content="https://agentgpt.reworkd.ai/" />
-      <meta property="og:image" content="https://agentgpt.reworkd.ai/banner.png" />
+      <meta property="og:url" content="https://agentrwkv.ai-creator.net/" />
+      <meta property="og:image" content="https://agentrwkv.ai-creator.net/banner.png" />
       <meta property="og:image:width" content="1280" />
       <meta property="og:image:height" content="640" />
       <meta property="og:type" content="website" />

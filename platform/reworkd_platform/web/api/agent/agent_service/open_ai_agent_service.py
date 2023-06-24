@@ -69,12 +69,15 @@ class OpenAIAgentService(AgentService):
             messages=analyze_task_prompt.format_prompt(
                 goal=goal,
                 task=task,
-                language=self.language,
+               # language=self.language,
             ).to_messages(),
             functions=list(map(get_tool_function, get_user_tools(tool_names))),
         )
 
-        function_call = message.additional_kwargs.get("function_call", {})
+        #function_call = message.additional_kwargs.get("function_call", {})
+        print(message)
+        function_call = {"name": "Reason"}
+        
         completion = function_call.get("arguments", "")
 
         try:

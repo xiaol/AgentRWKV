@@ -32,18 +32,32 @@ start_goal_prompt = PromptTemplate(
     input_variables=["goal"],
 )
 
+# analyze_task_prompt = PromptTemplate(
+#     template="""
+#     High level objective: "{goal}"
+#     Current task: "{task}"
+
+#     Based on this information, use the best function to make progress or accomplish the task entirely.
+#     Select the correct function by being smart and efficient. Ensure "reasoning" and only "reasoning" is in the 
+#     {language} language.
+    
+#     Note you MUST select a function.
+#     """,
+#     input_variables=["goal", "task", "language"],
+# )
+
 analyze_task_prompt = PromptTemplate(
     template="""
     High level objective: "{goal}"
     Current task: "{task}"
+    Function: [Reason, Conclude, Search, Code]
 
     Based on this information, use the best function to make progress or accomplish the task entirely.
-    Select the correct function by being smart and efficient. Ensure "reasoning" and only "reasoning" is in the 
-    {language} language.
+    Select the correct function by being smart and efficient. 
     
-    Note you MUST select a function.
+    Note you MUST select a function from list [Reason, Conclude, Search, Code]
     """,
-    input_variables=["goal", "task", "language"],
+    input_variables=["goal", "task"],
 )
 
 code_prompt = PromptTemplate(

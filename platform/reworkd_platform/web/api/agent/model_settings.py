@@ -36,5 +36,5 @@ def get_model_name(model_str: LLM_Model) -> str:
     if model_str == "gpt-4":
         return "gpt-4-0613"
     if model_str == "RWKV-world-7B":
-        return "RWKV-world-7B-0613"
+        return "RWKV-world-7B"
     return model_str
