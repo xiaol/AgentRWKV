@@ -17,6 +17,7 @@ from reworkd_platform.web.api.agent.helpers import (
 from reworkd_platform.web.api.agent.prompts import (
     analyze_task_prompt,
     create_tasks_prompt,
+    create_tasks_prompt_system,
     start_goal_prompt,
     start_goal_prompt_system,
 )
@@ -76,7 +77,7 @@ class OpenAIAgentService(AgentService):
 
         #function_call = message.additional_kwargs.get("function_call", {})
         print(message)
-        function_call = {"name": "Reason"}
+        function_call = {"name": "search"}
         
         completion = function_call.get("arguments", "")
 
@@ -116,7 +117,7 @@ class OpenAIAgentService(AgentService):
         completion = await call_model_with_handling(
             self.model,
             ChatPromptTemplate.from_messages(
-                [HumanMessagePromptTemplate(prompt=create_tasks_prompt)]
+                [SystemMessagePromptTemplate(prompt=create_tasks_prompt_system),HumanMessagePromptTemplate(prompt=create_tasks_prompt)]
             ),
             {
                 "goal": goal,

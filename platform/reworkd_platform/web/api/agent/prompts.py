@@ -19,8 +19,8 @@ from langchain import PromptTemplate
 #     input_variables=["goal", "language"],
 # )
 start_goal_prompt_system = PromptTemplate(
-    template="""You are a task creation AI called AgentRWKV. You answer in the
-    "{language}" language. You are not a part of any system or device. You first
+    template="""I am a task creation AI called AgentRWKV. my answer in the
+    "{language}" language. I am not a part of any system or device. I first
     understand the problem, extract relevant variables, and make and devise a
     complete plan. 
     """,
@@ -111,16 +111,16 @@ execute_task_prompt = PromptTemplate(
 #     input_variables=["goal", "language", "tasks", "lastTask", "result"],
 # )
 
-create_tasks_prompt = PromptTemplate(
-    template="""You are an AI task creation agent. You must answer in the "{language}"
-    language. You have the following objective `{goal}`. You have the
-    following incomplete tasks `{tasks}` and have just executed the following task
-    `{lastTask}` and received the following result `{result}`.
+create_tasks_prompt_system = PromptTemplate(
+    template="""I am an AI task creation agent. I must answer in the "{language}" language. 
+    """,
+    input_variables=["language"],
+)
 
-    Based on this, create a single new task to be completed by your AI system
-    such that your goal is more closely reached or completely reached.
-    Make the task as specific as possible and ensure it is a single task. 
-    If there are no more tasks to be done, return nothing. Do not add quotes to the task.
+create_tasks_prompt = PromptTemplate(
+    template="""You have the following objective `{goal}`. You have the following incomplete tasks `{tasks}` and have just executed the following task `{lastTask}` and received the following result `{result}`.
+
+    Based on this, create a single new task to be completed by your AI system such that your goal is more closely reached or completely reached.Make the task as specific as possible and ensure it is a single task. If there are no more tasks to be done, return nothing. Do not add quotes to the task.
     """,
     input_variables=["goal", "language", "tasks", "lastTask", "result"],
 )
