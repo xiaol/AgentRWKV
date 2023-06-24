@@ -30,7 +30,7 @@ It will attempt to reach the goal by thinking of tasks to do, executing them, an
 ---
 
 ## ✨ Demo
-For the best demo experience, try [our site](https://agentgpt.reworkd.ai) directly :)
+For the best demo experience, try [our site](https://agentrwkv.ai-creator.net) directly :)
 
 [Demo Video](https://github.com/reworkd/AgentGPT/assets/50181239/5348e44a-29a5-4280-a06b-fe1429a8d99e)
 
