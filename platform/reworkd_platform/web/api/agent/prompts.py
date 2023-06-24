@@ -122,7 +122,7 @@ create_tasks_prompt = PromptTemplate(
 
     Based on this, create a single new task to be completed by your AI system such that your goal is more closely reached or completely reached.Make the task as specific as possible and ensure it is a single task. If there are no more tasks to be done, return nothing. Do not add quotes to the task.
     """,
-    input_variables=["goal", "language", "tasks", "lastTask", "result"],
+    input_variables=["goal", "tasks", "lastTask", "result"],
 )
 
 # summarize_prompt = PromptTemplate(
